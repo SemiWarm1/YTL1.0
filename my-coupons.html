@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>我的卡券 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame coupon-list-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="coupon-list-content">
+        <div class="coupon-list-topbar">
+          <a class="coupon-detail-back" href="./profile.html" aria-label="返回钱包">‹</a>
+          <h1>我的卡券</h1>
+          <span class="coupon-detail-spacer" aria-hidden="true"></span>
+        </div>
+
+        <div class="coupon-list-tabs" role="tablist" aria-label="卡券状态">
+          <button class="coupon-list-tab is-active" type="button" data-coupon-panel="available">可使用</button>
+          <button class="coupon-list-tab" type="button" data-coupon-panel="used">已使用</button>
+          <button class="coupon-list-tab" type="button" data-coupon-panel="expired">已过期</button>
+        </div>
+
+        <section class="coupon-list-panel is-active" data-coupon-panel-content="available">
+          <article class="my-coupon-card">
+            <div class="my-coupon-copy">
+              <h2>5元无门槛优惠券</h2>
+              <p class="my-coupon-subtitle">满RM 20可用</p>
+              <p class="my-coupon-date">有效期至2026.01.24</p>
+            </div>
+            <a class="my-coupon-button" href="./coupon-detail.html">查看详情</a>
+          </article>
+
+          <article class="my-coupon-card">
+            <div class="my-coupon-copy">
+              <h2>9折券</h2>
+              <p class="my-coupon-date">有效期至2026.01.24</p>
+            </div>
+            <a class="my-coupon-button" href="./coupon-detail.html">查看详情</a>
+          </article>
+        </section>
+
+        <section class="coupon-list-panel" data-coupon-panel-content="used">
+          <article class="my-coupon-card my-coupon-card-muted">
+            <div class="my-coupon-copy">
+              <h2>停车减免券</h2>
+              <p class="my-coupon-subtitle">已于 2026.01.10 使用</p>
+              <p class="my-coupon-date">门店：YTL Mall Parking</p>
+            </div>
+            <a class="my-coupon-button my-coupon-button-muted" href="./coupon-detail.html">查看详情</a>
+          </article>
+        </section>
+
+        <section class="coupon-list-panel" data-coupon-panel-content="expired">
+          <article class="my-coupon-card my-coupon-card-muted">
+            <div class="my-coupon-copy">
+              <h2>会员欢迎礼券</h2>
+              <p class="my-coupon-subtitle">新会员专享礼券</p>
+              <p class="my-coupon-date">已于 2025.12.31 过期</p>
+            </div>
+            <a class="my-coupon-button my-coupon-button-muted" href="./coupon-detail.html">查看详情</a>
+          </article>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const couponTabs = document.querySelectorAll(".coupon-list-tab");
+    const couponPanels = document.querySelectorAll(".coupon-list-panel");
+
+    function setCouponPanel(panelName) {
+      couponTabs.forEach((tab) => {
+        tab.classList.toggle("is-active", tab.dataset.couponPanel === panelName);
+      });
+
+      couponPanels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.couponPanelContent === panelName);
+      });
+    }
+
+    couponTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setCouponPanel(tab.dataset.couponPanel);
+      });
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

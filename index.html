@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2ea">
+  <title>YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <div class="promo-overlay" id="promo-overlay" hidden>
+        <div class="promo-modal" role="dialog" aria-modal="true" aria-label="夏季时装广告弹窗">
+          <button class="promo-close" type="button" id="promo-close" aria-label="关闭广告" onclick="var promo=document.getElementById('promo-overlay'); if (promo) { promo.hidden = true; promo.style.display = 'none'; }">×</button>
+          <img class="promo-image" src="./assets/summer-fashion-popup.png" alt="夏季时装广告海报">
+        </div>
+      </div>
+
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <div class="app-content">
+        <section class="screen is-active" data-screen="home">
+          <section class="hero-panel">
+            <div class="topbar">
+              <a class="icon-button" href="./settings.html" aria-label="打开设置">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <div class="brand">
+                <p class="brand-cn">YTL Mall</p>
+                <p class="brand-en">A one-stop shopping mall</p>
+              </div>
+              <div class="topbar-actions">
+                <a class="message-button" href="./messages.html" aria-label="消息列表">
+                  <span class="message-icon" aria-hidden="true"></span>
+                  <span class="message-badge">1</span>
+                </a>
+                <a class="search-button" href="./search.html" aria-label="搜索">
+                  <span class="search-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <p class="member-copy">登录解锁更多会员礼遇</p>
+              <div class="member-actions">
+                <a class="ghost-button action-link" href="./login.html">立即登录</a>
+                <a class="solid-button action-link" href="./register.html">注册</a>
+              </div>
+            </div>
+
+            <a class="poster-card poster-card-link" href="./activity-detail.html?activity=spring-lifestyle" aria-label="查看活动详情：春日风尚生活">
+              <div class="poster-badge">商场精选活动</div>
+              <div class="poster-content">
+                <p class="poster-kicker">2026 春夏企划</p>
+                <h1>春日风尚生活</h1>
+                <p class="poster-desc">时尚快闪、生活方式展、会员积分礼遇同步开启</p>
+                <div class="poster-meta">
+                  <span>5月28日 - 6月14日</span>
+                  <span>YTL Mall 中央中庭</span>
+                </div>
+              </div>
+              <div class="poster-visual" aria-hidden="true">
+                <div class="portrait-card">
+                  <div class="portrait-circle portrait-circle-top"></div>
+                  <div class="portrait-figure"></div>
+                  <div class="portrait-circle portrait-circle-bottom"></div>
+                </div>
+              </div>
+            </a>
+          </section>
+
+          <section class="content-section">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow home-activity-title">最新活动</p>
+              </div>
+              <a href="./activities.html">查看全部</a>
+            </div>
+
+            <div class="deal-grid">
+              <a class="deal-card deal-card-jewelry deal-card-link" href="./activity-detail.html?activity=midsummer-jewelry" aria-label="查看活动详情：仲夏轻奢礼遇">
+                <p class="deal-brand">璨星珠宝</p>
+                <h3>仲夏轻奢礼遇</h3>
+                <p class="deal-copy">精选项链与手链满 1200 减 240</p>
+                <span class="deal-tag">限时特惠</span>
+              </a>
+
+              <article class="deal-card deal-card-beauty">
+                <p class="deal-brand">清妍美肤</p>
+                <h3>会员尝鲜价</h3>
+                <p class="deal-copy">人气精华套组低至 99 元，积分可叠加</p>
+                <span class="deal-tag">新客优享</span>
+              </article>
+            </div>
+
+            <div class="store-section">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">发现好店</p>
+                </div>
+              </div>
+
+              <div class="home-logo-grid">
+                <a class="home-logo-card" href="./store-detail.html?store=burberry-b1">
+                  <div class="home-logo-mark home-logo-burberry">BURBERRY</div>
+                  <h3>Burberry</h3>
+                  <p>B1 层</p>
+                </a>
+                <a class="home-logo-card" href="./store-detail.html?store=garrett-2f">
+                  <div class="home-logo-mark home-logo-garrett">
+                    <span class="garrett-wordmark">Garrett</span>
+                    <span class="garrett-subtitle">POPCORN SHOPS</span>
+                    <span class="garrett-meta">CHICAGO TRADITION</span>
+                  </div>
+                  <h3>Garrett Popcorn</h3>
+                  <p>2F 层</p>
+                </a>
+                <a class="home-logo-card" href="./store-detail.html?store=chamber-1f">
+                  <div class="home-logo-mark home-logo-chamber">CHAMBER</div>
+                  <h3>CHAMBER</h3>
+                  <p>1F 层</p>
+                </a>
+                <a class="home-logo-card" href="./store-detail.html?store=kids-3f">
+                  <div class="home-logo-mark home-logo-kids">KIDS</div>
+                  <h3>Cotton On Kids</h3>
+                  <p>3F 层</p>
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="底部导航">
+        <a class="nav-item is-active" href="./index.html" data-tab="home">
+          <span class="nav-icon">⌂</span>
+          <span>首页</span>
+        </a>
+        <a class="nav-item" href="./stores.html" data-tab="stores">
+          <span class="nav-icon">⌘</span>
+          <span>发现</span>
+        </a>
+        <a class="nav-item" href="./rewards.html" data-tab="rewards">
+          <span class="nav-icon">◎</span>
+          <span>奖励</span>
+        </a>
+        <a class="nav-item" href="./profile.html" data-tab="profile">
+          <span class="nav-icon">◫</span>
+          <span>钱包</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+  <script>
+    const promoOverlay = document.getElementById("promo-overlay");
+    const promoClose = document.getElementById("promo-close");
+    const promoWindowNameKey = "ytlPromoLastShownAt";
+
+    function readPromoState() {
+      try {
+        return window.name ? JSON.parse(window.name) : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function readPromoLastShownAt() {
+      const promoState = readPromoState();
+      const value = Number(promoState[promoWindowNameKey] || "0");
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function writePromoLastShownAt(timestamp) {
+      const promoState = readPromoState();
+      promoState[promoWindowNameKey] = timestamp;
+      window.name = JSON.stringify(promoState);
+    }
+
+    function closePromoOverlay() {
+      if (promoOverlay) {
+        promoOverlay.hidden = true;
+        promoOverlay.style.display = "none";
+      }
+
+      writePromoLastShownAt(Date.now());
+    }
+
+    window.closePromoOverlay = closePromoOverlay;
+
+    function shouldShowPromoOnLoad() {
+      const promoLastShownAt = readPromoLastShownAt();
+      const promoCooldownMs = 10 * 60 * 1000;
+      return !promoLastShownAt || Date.now() - promoLastShownAt >= promoCooldownMs;
+    }
+
+    if (promoOverlay && shouldShowPromoOnLoad()) {
+      promoOverlay.hidden = false;
+      promoOverlay.style.display = "flex";
+      writePromoLastShownAt(Date.now());
+    }
+
+    if (promoOverlay && promoClose) {
+      promoClose.addEventListener("click", closePromoOverlay);
+      promoOverlay.addEventListener("click", (event) => {
+        if (event.target === promoOverlay) {
+          closePromoOverlay();
+        }
+      });
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

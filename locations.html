@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>地点列表 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="store-detail-content locations-page-content">
+        <a class="login-back" href="./stores.html">‹ 返回</a>
+
+        <div class="section-heading section-heading-left locations-heading">
+          <div>
+            <h2>地点列表</h2>
+          </div>
+        </div>
+
+        <div class="locations-list">
+          <button class="location-option is-active" type="button" data-location-name="吉隆坡" data-location-address="YTL Mall Kuala Lumpur, Bukit Bintang">
+            <span class="location-option-name">吉隆坡</span>
+            <span class="location-option-address">YTL Mall Kuala Lumpur, Bukit Bintang</span>
+          </button>
+          <button class="location-option" type="button" data-location-name="槟城" data-location-address="YTL Mall Penang, George Town">
+            <span class="location-option-name">槟城</span>
+            <span class="location-option-address">YTL Mall Penang, George Town</span>
+          </button>
+          <button class="location-option" type="button" data-location-name="新山" data-location-address="YTL Mall Johor Bahru, City Square">
+            <span class="location-option-name">新山</span>
+            <span class="location-option-address">YTL Mall Johor Bahru, City Square</span>
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const locationOptions = document.querySelectorAll(".location-option");
+    const savedLocation = localStorage.getItem("ytlSelectedLocationName");
+
+    if (savedLocation) {
+      locationOptions.forEach((option) => {
+        option.classList.toggle("is-active", option.dataset.locationName === savedLocation);
+      });
+    }
+
+    locationOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        localStorage.setItem("ytlSelectedLocationName", option.dataset.locationName);
+        localStorage.setItem("ytlSelectedLocationAddress", option.dataset.locationAddress);
+        window.location.href = "./stores.html";
+      });
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

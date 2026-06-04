@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fffdf9">
+  <title>新建录入 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame merchant-register-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="merchant-register-content">
+        <div class="merchant-register-topbar">
+          <a class="coupon-detail-back" href="./merchant-manual-records.html" aria-label="返回录入记录">‹</a>
+          <div>
+            <p class="merchant-register-eyebrow">Merchant Workbench</p>
+            <h1>新建录入</h1>
+          </div>
+        </div>
+
+        <section class="merchant-register-intro">
+          <p>填写单据内容后提交，用于补录会员资料、交易金额或优惠券核销。</p>
+        </section>
+
+        <form class="merchant-register-form">
+          <fieldset class="field-group merchant-choice-group">
+            <legend>单据类型</legend>
+            <div class="merchant-choice-row">
+              <label class="merchant-choice-pill">
+                <input type="radio" name="manual-type" value="member" checked>
+                <span>会员补录</span>
+              </label>
+              <label class="merchant-choice-pill">
+                <input type="radio" name="manual-type" value="transaction">
+                <span>交易补录</span>
+              </label>
+              <label class="merchant-choice-pill">
+                <input type="radio" name="manual-type" value="coupon">
+                <span>优惠券核销</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-group">
+            <span>交易门店</span>
+            <input class="text-input" type="text" value="YTL Mall 美妆馆" placeholder="请输入交易门店">
+          </label>
+
+          <label class="field-group">
+            <span>单据时间</span>
+            <input class="text-input merchant-datetime-input" type="datetime-local" value="2026-05-27T14:21" step="60">
+          </label>
+
+          <label class="field-group merchant-member-name-field" id="merchant-member-name-field">
+            <span>会员姓名</span>
+            <input class="text-input" type="text" placeholder="请输入会员姓名">
+          </label>
+
+          <label class="field-group merchant-coupon-code-field is-hidden" id="merchant-coupon-code-field">
+            <span>优惠券券码</span>
+            <input class="text-input" type="text" placeholder="请输入优惠券券码">
+          </label>
+
+          <label class="field-group">
+            <span>金额</span>
+            <input class="text-input" type="text" placeholder="请输入金额，如 RM 128.00">
+          </label>
+
+          <label class="field-group">
+            <span>录入人员</span>
+            <input class="text-input" type="text" value="Tom">
+          </label>
+
+          <label class="field-group">
+            <span>备注</span>
+            <textarea class="merchant-textarea" placeholder="请输入录入说明或备注"></textarea>
+          </label>
+
+          <button class="solid-button login-submit merchant-register-submit" type="button">提交单据</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const manualTypeInputs = document.querySelectorAll('input[name="manual-type"]');
+    const couponCodeField = document.getElementById("merchant-coupon-code-field");
+    const memberNameField = document.getElementById("merchant-member-name-field");
+
+    function updateManualTypeFields() {
+      const selected = document.querySelector('input[name="manual-type"]:checked')?.value;
+      const showMemberName = selected === "member";
+      const showCouponCode = selected === "coupon";
+      memberNameField?.classList.toggle("is-hidden", !showMemberName);
+      couponCodeField?.classList.toggle("is-hidden", !showCouponCode);
+    }
+
+    manualTypeInputs.forEach((input) => {
+      input.addEventListener("change", updateManualTypeFields);
+    });
+
+    updateManualTypeFields();
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f2ea">
+  <title>工作台 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame merchant-home-page merchant-workbench-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <div class="app-content">
+        <section class="screen is-active" data-screen="merchant-workbench">
+          <section class="hero-panel merchant-workbench-hero">
+            <div class="topbar">
+              <a class="icon-button" href="./settings.html" aria-label="打开设置">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <div class="brand">
+                <p class="brand-cn">YTL Mall</p>
+                <p class="brand-en">Merchant Workbench</p>
+              </div>
+              <div class="topbar-actions">
+                <a class="merchant-profile-button" href="./merchant-profile.html" aria-label="商户人员 Tom">
+                  <span class="merchant-profile-icon" aria-hidden="true"></span>
+                  <span class="merchant-profile-name">tom</span>
+                </a>
+              </div>
+            </div>
+
+            <article class="wallet-hero-card merchant-hero-card merchant-workbench-summary">
+              <div class="wallet-topline">
+                <div class="wallet-user">
+                  <div class="wallet-user-avatar">W</div>
+                  <p>Workbench</p>
+                </div>
+              </div>
+
+              <div class="wallet-balance-block">
+                <p class="wallet-balance-label">注册会员</p>
+                <h1>12</h1>
+              </div>
+
+              <div class="merchant-task-pills">
+                <article class="merchant-task-pill">
+                  <span>核销优惠券</span>
+                  <strong>38</strong>
+                </article>
+                <article class="merchant-task-pill">
+                  <span>人工录入</span>
+                  <strong>09</strong>
+                </article>
+              </div>
+
+            </article>
+          </section>
+
+          <section class="content-section content-section-tight merchant-workbench-content">
+            <div class="section-heading section-heading-left">
+              <div>
+                <h2 class="section-title-compact">工作台</h2>
+              </div>
+            </div>
+
+            <div class="merchant-workbench-grid">
+              <a class="merchant-workbench-card" href="./merchant-register.html">
+                <span class="merchant-workbench-icon merchant-workbench-icon-register" aria-hidden="true"></span>
+                <strong>会员注册</strong>
+                <p>快速录入新会员资料并开通账户</p>
+              </a>
+
+              <a class="merchant-workbench-card" href="./merchant-member-search.html">
+                <span class="merchant-workbench-icon merchant-workbench-icon-member" aria-hidden="true"></span>
+                <strong>会员查询</strong>
+                <p>查询会员档案、积分与历史记录</p>
+              </a>
+
+              <a class="merchant-workbench-card" href="./merchant-manual-records.html">
+                <span class="merchant-workbench-icon merchant-workbench-icon-manual" aria-hidden="true"></span>
+                <strong>人工录入</strong>
+                <p>补录会员资料、交易或服务备注</p>
+              </a>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <nav class="bottom-nav merchant-bottom-nav" aria-label="商户端底部导航">
+        <a class="nav-item" href="./index2.html">
+          <span class="nav-icon">◫</span>
+          <span>数据</span>
+        </a>
+        <a class="nav-item is-active" href="./workbench.html">
+          <span class="nav-icon">⌘</span>
+          <span>工作台</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

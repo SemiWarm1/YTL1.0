@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>门店 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <div class="app-content">
+        <section class="screen is-active" data-screen="stores">
+          <section class="content-section content-section-tight">
+            <div class="stores-brand-strip">
+              <img class="stores-brand-image" src="./assets/ytl-logo-white.png" alt="YTL Since 1955 标志">
+              <a class="stores-location-link" href="./locations.html" aria-label="选择商场地点">
+                <span class="location-pin" aria-hidden="true"></span>
+                <span id="stores-location-name">吉隆坡</span>
+              </a>
+            </div>
+
+            <div class="store-carousel" data-carousel>
+              <div class="store-carousel-track">
+                <article class="store-slide is-active">
+                  <img src="./assets/store-carousel/fashion-banner.png" alt="女性高端服饰轮播图">
+                  <div class="store-slide-copy">
+                    <h3>当季新作甄选</h3>
+                  </div>
+                </article>
+                <article class="store-slide">
+                  <img src="./assets/store-carousel/bags-banner.png" alt="精品包包轮播图">
+                  <div class="store-slide-copy">
+                    <h3>经典与新季同场呈现</h3>
+                  </div>
+                </article>
+                <article class="store-slide">
+                  <img src="./assets/store-carousel/beauty-banner.png" alt="高端化妆品轮播图">
+                  <div class="store-slide-copy">
+                    <h3>护肤与彩妆灵感集合</h3>
+                  </div>
+                </article>
+              </div>
+              <div class="store-carousel-dots" aria-label="轮播指示">
+                <span class="store-dot is-active"></span>
+                <span class="store-dot"></span>
+                <span class="store-dot"></span>
+              </div>
+            </div>
+
+            <div class="store-guide">
+              <div class="section-heading section-heading-left">
+                <div>
+                  <h2>店铺指南</h2>
+                </div>
+              </div>
+
+              <div class="guide-tabs" role="tablist" aria-label="店铺分类">
+                <button class="guide-tab is-active" type="button" data-guide-category="all">全部</button>
+                <button class="guide-tab" type="button" data-guide-category="fashion">时尚</button>
+                <button class="guide-tab" type="button" data-guide-category="beauty">美容美发</button>
+                <button class="guide-tab" type="button" data-guide-category="home">家具</button>
+                <button class="guide-tab" type="button" data-guide-category="jewelry">珠宝及钟表</button>
+                <button class="guide-tab" type="button" data-guide-category="dining">食品与饮料</button>
+              </div>
+
+              <div class="floor-filters" aria-label="楼层筛选">
+                <button class="floor-chip is-active" type="button" data-guide-floor="all">全部楼层</button>
+                <button class="floor-chip" type="button" data-guide-floor="1F">1F</button>
+                <button class="floor-chip" type="button" data-guide-floor="3F">3F</button>
+                <button class="floor-chip" type="button" data-guide-floor="5F">5F</button>
+              </div>
+
+              <div class="store-list guide-store-list">
+                <a class="store-item" href="./store-detail.html?store=beauty-1f" data-category="beauty" data-floor="1F">
+                  <img class="guide-store-image" src="./assets/store-guide/beauty-store.png" alt="清妍美肤门店图片">
+                  <div class="guide-store-copy">
+                    <h3>清妍美肤</h3>
+                    <p>1F 层</p>
+                  </div>
+                </a>
+                <a class="store-item" href="./store-detail.html?store=fashion-2f" data-category="fashion" data-floor="2F">
+                  <img class="guide-store-image" src="./assets/store-carousel/fashion-banner.png" alt="未序女装门店图片">
+                  <div class="guide-store-copy">
+                    <h3>未序女装</h3>
+                    <p>2F 层</p>
+                  </div>
+                </a>
+                <a class="store-item" href="./store-detail.html?store=dining-5f" data-category="dining" data-floor="5F">
+                  <img class="guide-store-image" src="./assets/store-guide/dining-store.png" alt="云上小馆门店图片">
+                  <div class="guide-store-copy">
+                    <h3>云上小馆</h3>
+                    <p>5F 层</p>
+                  </div>
+                </a>
+                <a class="store-item" href="./store-detail.html?store=home-3f" data-category="home" data-floor="3F">
+                  <img class="guide-store-image" src="./assets/store-guide/home-store.png" alt="素作生活门店图片">
+                  <div class="guide-store-copy">
+                    <h3>素作生活</h3>
+                    <p>3F 层</p>
+                  </div>
+                </a>
+                <a class="store-item" href="./store-detail.html?store=jewelry-1f" data-category="jewelry" data-floor="1F">
+                  <img class="guide-store-image" src="./assets/store-carousel/bags-banner.png" alt="璨星珠宝门店图片">
+                  <div class="guide-store-copy">
+                    <h3>璨星珠宝</h3>
+                    <p>1F 层</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="底部导航">
+        <a class="nav-item" href="./index.html">
+          <span class="nav-icon">⌂</span>
+          <span>首页</span>
+        </a>
+        <a class="nav-item is-active" href="./stores.html">
+          <span class="nav-icon">⌘</span>
+          <span>发现</span>
+        </a>
+        <a class="nav-item" href="./rewards.html">
+          <span class="nav-icon">◎</span>
+          <span>奖励</span>
+        </a>
+        <a class="nav-item" href="./profile.html">
+          <span class="nav-icon">◫</span>
+          <span>钱包</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <script>
+    const selectedLocationName = document.getElementById("stores-location-name");
+    const carousel = document.querySelector("[data-carousel]");
+    const slides = document.querySelectorAll(".store-slide");
+    const dots = document.querySelectorAll(".store-dot");
+    const guideTabs = document.querySelectorAll(".guide-tab");
+    const floorChips = document.querySelectorAll(".floor-chip");
+    const guideStoreItems = document.querySelectorAll(".guide-store-list .store-item");
+    let activeGuideCategory = "all";
+    let activeGuideFloor = "all";
+
+    const savedLocation = localStorage.getItem("ytlSelectedLocationName");
+    if (savedLocation && selectedLocationName) {
+      selectedLocationName.textContent = savedLocation;
+    }
+
+    if (carousel && slides.length > 0) {
+      let currentSlideIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === index);
+        });
+
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle("is-active", dotIndex === index);
+        });
+      }
+
+      setInterval(() => {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+      }, 3000);
+    }
+
+    function filterGuideStores() {
+      guideStoreItems.forEach((item) => {
+        const category = item.dataset.category;
+        const floor = item.dataset.floor;
+        const matchedCategory = activeGuideCategory === "all" || category === activeGuideCategory;
+        const matchedFloor = activeGuideFloor === "all" || floor === activeGuideFloor;
+        item.style.display = matchedCategory && matchedFloor ? "" : "none";
+      });
+    }
+
+    guideTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        activeGuideCategory = tab.dataset.guideCategory;
+        guideTabs.forEach((item) => item.classList.toggle("is-active", item === tab));
+        filterGuideStores();
+      });
+    });
+
+    floorChips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        activeGuideFloor = chip.dataset.guideFloor;
+        floorChips.forEach((item) => item.classList.toggle("is-active", item === chip));
+        filterGuideStores();
+      });
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

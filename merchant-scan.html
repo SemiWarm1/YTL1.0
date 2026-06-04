@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#090909">
+  <title>扫码核销 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame merchant-scan-page">
+      <header class="status-bar merchant-scan-status">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="merchant-scan-content">
+        <div class="merchant-scan-topbar">
+          <a class="merchant-scan-back" href="./index2.html" aria-label="返回商户首页">‹</a>
+          <div>
+            <p class="merchant-scan-eyebrow">Merchant Console</p>
+            <h1>扫码核销</h1>
+          </div>
+        </div>
+
+        <div class="merchant-scan-viewfinder" aria-hidden="true">
+          <span class="merchant-scan-corner merchant-scan-corner-tl"></span>
+          <span class="merchant-scan-corner merchant-scan-corner-tr"></span>
+          <span class="merchant-scan-corner merchant-scan-corner-bl"></span>
+          <span class="merchant-scan-corner merchant-scan-corner-br"></span>
+          <div class="merchant-scan-frame"></div>
+          <div class="merchant-scan-line"></div>
+        </div>
+
+        <p class="merchant-scan-tip">将取景框对准二维码，即可自动扫描</p>
+
+        <div class="merchant-scan-actions">
+          <button class="merchant-scan-button" type="button">从相册导入</button>
+          <button class="merchant-scan-button merchant-scan-button-solid" type="button">开始扫描</button>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

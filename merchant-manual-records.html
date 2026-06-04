@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fffdf9">
+  <title>录入记录 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame activities-page merchant-manual-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="activities-content merchant-manual-content">
+        <div class="merchant-profile-topbar">
+          <a class="coupon-detail-back" href="./workbench.html" aria-label="返回工作台">‹</a>
+          <h1>录入记录</h1>
+          <a class="merchant-profile-edit-button merchant-create-link" href="./merchant-manual-create.html">新建</a>
+        </div>
+
+        <section class="merchant-transaction-filter merchant-manual-filter">
+          <div class="merchant-transaction-filter-fields">
+            <label class="field-group merchant-filter-group">
+              <span>开始时间</span>
+              <input class="text-input" type="text" value="2026-05-26" placeholder="请选择开始时间">
+            </label>
+            <label class="field-group merchant-filter-group">
+              <span>结束时间</span>
+              <input class="text-input" type="text" value="2026-05-27" placeholder="请选择结束时间">
+            </label>
+          </div>
+
+          <div class="merchant-choice-row merchant-transaction-shortcuts">
+            <label class="merchant-choice-pill">
+              <input type="radio" name="manual-quick-range" checked>
+              <span>今日</span>
+            </label>
+            <label class="merchant-choice-pill">
+              <input type="radio" name="manual-quick-range">
+              <span>昨日</span>
+            </label>
+            <label class="merchant-choice-pill">
+              <input type="radio" name="manual-quick-range">
+              <span>本周</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="activities-panel merchant-manual-panel merchant-transaction-list-page">
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-05-27 14:20:18</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">会员补录</strong>
+                <p class="merchant-transaction-order">录入人员：Tom</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">单据金额</span>
+                <strong class="merchant-transaction-points">RM128.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-05-27 11:42:03</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">优惠券核销</strong>
+                <p class="merchant-transaction-order">录入人员：Tom</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">单据金额</span>
+                <strong class="merchant-transaction-points">RM0.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-05-26 18:15:26</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">交易补录</strong>
+                <p class="merchant-transaction-order">录入人员：Tom</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">单据金额</span>
+                <strong class="merchant-transaction-points">RM59.90</strong>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>消息 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame message-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="message-content">
+        <div class="message-topbar">
+          <div class="message-topbar-row">
+            <a class="login-back" href="./index.html">‹ 返回</a>
+            <button class="mark-read-button" id="mark-read-button" type="button">全部已读</button>
+          </div>
+          <div class="message-heading">
+            <p class="eyebrow">Notifications</p>
+            <h1>消息列表</h1>
+          </div>
+        </div>
+
+        <div class="message-list">
+          <article class="message-card is-unread" data-message-card>
+            <div class="message-main">
+              <div class="message-title-row">
+                <h2>会员积分到账提醒</h2>
+                <span class="message-dot" aria-label="未读" data-message-dot></span>
+              </div>
+              <p class="message-copy">您已获得 320 积分，可前往奖励中心查看最新礼遇。</p>
+            </div>
+            <div class="message-meta">
+              <time datetime="2026-05-26T18:45">今天 18:45</time>
+              <span class="message-state unread" data-message-state>未读</span>
+            </div>
+          </article>
+
+          <article class="message-card">
+            <div class="message-main">
+              <div class="message-title-row">
+                <h2>夏季时装活动即将开始</h2>
+              </div>
+              <p class="message-copy">中央中庭春夏企划将于 5 月 28 日开启，欢迎提前预约到场。</p>
+            </div>
+            <div class="message-meta">
+              <time datetime="2026-05-25T14:20">05-25 14:20</time>
+              <span class="message-state">已读</span>
+            </div>
+          </article>
+
+          <article class="message-card">
+            <div class="message-main">
+              <div class="message-title-row">
+                <h2>停车优惠券已发放</h2>
+              </div>
+              <p class="message-copy">您的 2 小时停车礼券已存入账户，可在我的券包中使用。</p>
+            </div>
+            <div class="message-meta">
+              <time datetime="2026-05-24T10:05">05-24 10:05</time>
+              <span class="message-state">已读</span>
+            </div>
+          </article>
+
+          <article class="message-card">
+            <div class="message-main">
+              <div class="message-title-row">
+                <h2>新店入驻通知</h2>
+              </div>
+              <p class="message-copy">Cotton On Kids 已于 3F 正式开业，欢迎前往探索当季新品。</p>
+            </div>
+            <div class="message-meta">
+              <time datetime="2026-05-22T09:30">05-22 09:30</time>
+              <span class="message-state">已读</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const markReadButton = document.getElementById("mark-read-button");
+    const unreadCards = document.querySelectorAll("[data-message-card]");
+
+    if (markReadButton) {
+      markReadButton.addEventListener("click", () => {
+        unreadCards.forEach((card) => {
+          card.classList.remove("is-unread");
+          const dot = card.querySelector("[data-message-dot]");
+          const state = card.querySelector("[data-message-state]");
+
+          if (dot) {
+            dot.remove();
+          }
+
+          if (state) {
+            state.textContent = "已读";
+            state.classList.remove("unread");
+          }
+        });
+
+        markReadButton.textContent = "已全部读";
+        markReadButton.disabled = true;
+      });
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fffdf9">
+  <title>会员查询 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame search-page merchant-member-search-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="search-content merchant-member-search-content">
+        <div class="merchant-register-topbar">
+          <a class="coupon-detail-back" href="./workbench.html" aria-label="返回工作台">‹</a>
+          <div>
+            <p class="merchant-register-eyebrow">Merchant Workbench</p>
+            <h1>会员查询</h1>
+          </div>
+        </div>
+
+        <div class="search-box merchant-member-search-box">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="member-search-input" class="search-input" type="text" placeholder="姓名或手机号后四位">
+        </div>
+
+        <div class="merchant-member-search-results">
+          <article class="search-result-card merchant-member-card" data-keywords="Tom 8821 01988218821">
+            <p class="search-result-type">会员姓名</p>
+            <h3>Tom</h3>
+            <p>余额：RM 1,239.00</p>
+            <p>积分：231</p>
+            <p>手机号：019-8821</p>
+          </article>
+
+          <article class="search-result-card merchant-member-card" data-keywords="James Dean 4568 0123454568">
+            <p class="search-result-type">会员姓名</p>
+            <h3>James Dean</h3>
+            <p>余额：RM 3,482.10</p>
+            <p>积分：892</p>
+            <p>手机号：012-4568</p>
+          </article>
+
+          <article class="search-result-card merchant-member-card" data-keywords="Alicia Tan 1024 0176611024">
+            <p class="search-result-type">会员姓名</p>
+            <h3>Alicia Tan</h3>
+            <p>余额：RM 648.80</p>
+            <p>积分：126</p>
+            <p>手机号：017-1024</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const memberSearchInput = document.getElementById("member-search-input");
+    const memberCards = document.querySelectorAll(".merchant-member-card");
+
+    function filterMemberCards() {
+      const keyword = (memberSearchInput.value || "").trim().toLowerCase();
+      memberCards.forEach((card) => {
+        const haystack = ((card.dataset.keywords || "") + " " + card.textContent).toLowerCase();
+        const matched = !keyword || haystack.includes(keyword);
+        card.style.display = matched ? "" : "none";
+      });
+    }
+
+    memberSearchInput.addEventListener("input", filterMemberCards);
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

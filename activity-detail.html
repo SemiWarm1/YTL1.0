@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>活动详情 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="store-detail-content activity-detail-content">
+        <a class="login-back" href="./index.html">‹ 返回</a>
+
+        <section class="activity-detail-hero">
+          <div class="poster-badge" id="activity-detail-badge">商场精选活动</div>
+          <p class="activity-detail-kicker" id="activity-detail-kicker">2026 春夏企划</p>
+          <h1 id="activity-detail-title">春日风尚生活</h1>
+          <p class="activity-detail-copy" id="activity-detail-copy">时尚快闪、生活方式展、会员积分礼遇同步开启。围绕春夏换季灵感，联合馆内精选品牌打造为期两周的主题活动。</p>
+
+          <div class="activity-detail-visual" aria-hidden="true">
+            <div class="activity-detail-stage" id="activity-detail-stage">
+              <div class="activity-detail-ring"></div>
+              <div class="activity-detail-platform"></div>
+              <div class="activity-detail-glow activity-detail-glow-left"></div>
+              <div class="activity-detail-glow activity-detail-glow-right"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="store-detail-info reward-detail-panel activity-detail-panel">
+          <div class="store-detail-list">
+            <article class="store-detail-row">
+              <span>活动时间</span>
+              <strong id="activity-detail-date">2026.05.28 - 2026.06.14</strong>
+            </article>
+            <article class="store-detail-row">
+              <span>活动地点</span>
+              <strong id="activity-detail-location">YTL Mall 中央中庭</strong>
+            </article>
+            <article class="store-detail-row">
+              <span>开放时间</span>
+              <strong id="activity-detail-hours">每日 10:00 - 22:00</strong>
+            </article>
+            <article class="store-detail-row">
+              <span>参与对象</span>
+              <strong id="activity-detail-audience">全体顾客 / 会员优先礼遇</strong>
+            </article>
+            <article class="store-detail-row reward-detail-rule">
+              <span>活动亮点</span>
+              <p class="reward-rule-copy" id="activity-detail-highlights">现场设有时尚快闪展区、生活方式品牌体验区与会员积分加赠专区。指定日期消费可参与抽奖，会员在服务台登记后可领取限定礼遇。</p>
+            </article>
+            <article class="store-detail-row reward-detail-rule">
+              <span>参与方式</span>
+              <p class="reward-rule-copy" id="activity-detail-join">到场后可直接参与公开展区活动；如需领取会员专属礼遇，请在商场服务台出示会员码完成登记。部分互动名额有限，建议提前到场。</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <div class="exchange-action-bar">
+        <a class="exchange-primary-button activity-detail-button" href="./activities.html">查看活动列表</a>
+      </div>
+    </section>
+  </main>
+  <script>
+    const activityConfigs = {
+      "spring-lifestyle": {
+        badge: "商场精选活动",
+        kicker: "2026 春夏企划",
+        title: "春日风尚生活",
+        copy: "时尚快闪、生活方式展、会员积分礼遇同步开启。围绕春夏换季灵感，联合馆内精选品牌打造为期两周的主题活动。",
+        date: "2026.05.28 - 2026.06.14",
+        location: "YTL Mall 中央中庭",
+        hours: "每日 10:00 - 22:00",
+        audience: "全体顾客 / 会员优先礼遇",
+        highlights: "现场设有时尚快闪展区、生活方式品牌体验区与会员积分加赠专区。指定日期消费可参与抽奖，会员在服务台登记后可领取限定礼遇。",
+        join: "到场后可直接参与公开展区活动；如需领取会员专属礼遇，请在商场服务台出示会员码完成登记。部分互动名额有限，建议提前到场。",
+        stageClass: "activity-detail-stage"
+      },
+      "midsummer-jewelry": {
+        badge: "品牌限时活动",
+        kicker: "璨星珠宝 · 夏日礼遇",
+        title: "仲夏轻奢礼遇",
+        copy: "精选项链与手链满 RM1200 立减 RM240，活动期间到店消费还可叠加会员积分礼遇，适合节日赠礼与夏日焕新搭配。",
+        date: "2026.06.01 - 2026.06.20",
+        location: "YTL Mall 珠宝专区 1F",
+        hours: "每日 10:00 - 22:00",
+        audience: "珠宝专区顾客 / 会员专享叠加",
+        highlights: "指定系列项链、手链与耳饰参与满额立减；单笔消费达到门槛可获赠清洁保养服务一次，会员积分可同步累计。",
+        join: "活动期间前往璨星珠宝门店选购参与商品，结账时自动享受满减优惠。部分限量款以店内现货为准，可提前联系门店预留。",
+        stageClass: "activity-detail-stage activity-detail-stage-jewelry"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const activityKey = params.get("activity") || "spring-lifestyle";
+    const activityData = activityConfigs[activityKey] || activityConfigs["spring-lifestyle"];
+
+    document.title = activityData.title + " - YTL Mall";
+    document.getElementById("activity-detail-badge").textContent = activityData.badge;
+    document.getElementById("activity-detail-kicker").textContent = activityData.kicker;
+    document.getElementById("activity-detail-title").textContent = activityData.title;
+    document.getElementById("activity-detail-copy").textContent = activityData.copy;
+    document.getElementById("activity-detail-date").textContent = activityData.date;
+    document.getElementById("activity-detail-location").textContent = activityData.location;
+    document.getElementById("activity-detail-hours").textContent = activityData.hours;
+    document.getElementById("activity-detail-audience").textContent = activityData.audience;
+    document.getElementById("activity-detail-highlights").textContent = activityData.highlights;
+    document.getElementById("activity-detail-join").textContent = activityData.join;
+    document.getElementById("activity-detail-stage").className = activityData.stageClass;
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

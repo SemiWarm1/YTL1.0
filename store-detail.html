@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>门店详情 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame store-detail-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="store-detail-content">
+        <a class="login-back" href="./index.html">‹ 返回</a>
+
+        <div class="store-detail-hero">
+          <div class="store-detail-logo" id="store-detail-logo">BURBERRY</div>
+        </div>
+
+        <section class="store-detail-info">
+          <h1 id="store-detail-name">Burberry</h1>
+
+          <div class="store-detail-list">
+            <article class="store-detail-row">
+              <span>商铺号</span>
+              <strong id="store-detail-unit">B1-023</strong>
+            </article>
+            <article class="store-detail-row">
+              <span>商铺位置</span>
+              <strong id="store-detail-location">B1 层 中庭西侧</strong>
+            </article>
+            <article class="store-detail-row">
+              <span>类别</span>
+              <strong id="store-detail-category">时尚</strong>
+            </article>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const storeMap = {
+      "burberry-b1": {
+        logo: "BURBERRY",
+        name: "Burberry",
+        unit: "B1-023",
+        location: "B1 层 中庭西侧",
+        category: "时尚",
+        logoClass: "home-logo-burberry"
+      },
+      "garrett-2f": {
+        logoHtml: "<span class=\"garrett-wordmark\">Garrett</span><span class=\"garrett-subtitle\">POPCORN SHOPS</span><span class=\"garrett-meta\">CHICAGO TRADITION</span>",
+        name: "Garrett Popcorn",
+        unit: "2F-112",
+        location: "2F 层 甜品零食区",
+        category: "食品与饮料",
+        logoClass: "store-detail-logo-garrett"
+      },
+      "chamber-1f": {
+        logo: "CHAMBER",
+        name: "CHAMBER",
+        unit: "1F-018",
+        location: "1F 层 主中庭南侧",
+        category: "珠宝及钟表",
+        logoClass: "home-logo-chamber"
+      },
+      "kids-3f": {
+        logo: "KIDS",
+        name: "Cotton On Kids",
+        unit: "3F-305",
+        location: "3F 层 童趣生活馆",
+        category: "童装",
+        logoClass: "home-logo-kids"
+      },
+      "beauty-1f": {
+        logo: "BEAUTY",
+        name: "清妍美肤",
+        unit: "1F-105",
+        location: "1F 层 护肤彩妆区",
+        category: "美容美发",
+        logoClass: "store-detail-logo-gold"
+      },
+      "fashion-2f": {
+        logo: "MODE",
+        name: "未序女装",
+        unit: "2F-210",
+        location: "2F 层 时尚女装区",
+        category: "时尚",
+        logoClass: "store-detail-logo-fashion"
+      },
+      "dining-5f": {
+        logo: "DINING",
+        name: "云上小馆",
+        unit: "5F-502",
+        location: "5F 层 餐饮露台区",
+        category: "食品与饮料",
+        logoClass: "store-detail-logo-dining"
+      },
+      "home-3f": {
+        logo: "LIVING",
+        name: "素作生活",
+        unit: "3F-318",
+        location: "3F 层 家居美学区",
+        category: "家具",
+        logoClass: "store-detail-logo-home"
+      },
+      "jewelry-1f": {
+        logo: "JEWEL",
+        name: "璨星珠宝",
+        unit: "1F-022",
+        location: "1F 层 珠宝精品廊",
+        category: "珠宝及钟表",
+        logoClass: "store-detail-logo-jewelry"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const storeKey = params.get("store") || "burberry-b1";
+    const storeData = storeMap[storeKey] || storeMap["burberry-b1"];
+
+    const logoEl = document.getElementById("store-detail-logo");
+    const nameEl = document.getElementById("store-detail-name");
+    const unitEl = document.getElementById("store-detail-unit");
+    const locationEl = document.getElementById("store-detail-location");
+    const categoryEl = document.getElementById("store-detail-category");
+
+    if (logoEl && nameEl && unitEl && locationEl && categoryEl) {
+      logoEl.className = "store-detail-logo " + storeData.logoClass;
+      if (storeData.logoHtml) {
+        logoEl.innerHTML = storeData.logoHtml;
+      } else {
+        logoEl.textContent = storeData.logo;
+      }
+      nameEl.textContent = storeData.name;
+      unitEl.textContent = storeData.unit;
+      locationEl.textContent = storeData.location;
+      categoryEl.textContent = storeData.category;
+      document.title = storeData.name + " - YTL Mall";
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

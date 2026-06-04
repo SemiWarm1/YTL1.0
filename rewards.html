@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>奖励 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <div class="app-content">
+        <section class="screen is-active" data-screen="rewards">
+          <section class="content-section content-section-tight">
+            <div class="section-heading section-heading-left">
+              <div class="rewards-tabs" role="tablist" aria-label="奖励栏目">
+                <button class="rewards-tab is-active" type="button" data-rewards-tab="rewards">奖励</button>
+                <button class="rewards-tab" type="button" data-rewards-tab="coupons">优惠券</button>
+              </div>
+            </div>
+            <div class="rewards-panel is-active" data-rewards-panel="rewards">
+              <div class="section-heading section-heading-left rewards-list-heading">
+                <div>
+                  <h2>奖励列表</h2>
+                </div>
+              </div>
+              <div class="deal-grid single-column">
+                <a class="deal-card deal-card-jewelry reward-card-link" href="./exchange-detail.html">
+                  <p class="deal-brand">积分兑换</p>
+                  <h3>停车券</h3>
+                  <p class="deal-copy">兑换可用，离场前自动抵扣停车时长。</p>
+                  <span class="deal-tag">热门兑换</span>
+                </a>
+                <article class="deal-card deal-card-beauty">
+                  <p class="deal-brand">白银会员专享</p>
+                  <h3>全场优惠10%</h3>
+                  <p class="deal-copy">消费金额需要满足RM100.00</p>
+                  <span class="deal-tag">会员专享</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="rewards-panel" data-rewards-panel="coupons">
+              <div class="section-heading section-heading-left rewards-list-heading">
+                <div>
+                  <h2>可领取优惠券列表</h2>
+                </div>
+              </div>
+              <div class="deal-grid single-column">
+                <a class="deal-card deal-card-jewelry reward-card-link" href="./coupon-detail.html">
+                  <p class="deal-brand">优惠券</p>
+                  <h3>现金5RM</h3>
+                  <p class="deal-copy">无条件使用，不限制门店</p>
+                  <span class="deal-tag">立即使用</span>
+                </a>
+                <article class="deal-card deal-card-beauty">
+                  <p class="deal-brand">优惠券</p>
+                  <h3>甜品饮品 85 折券</h3>
+                  <p class="deal-copy">指定轻食甜品门店适用，周末与节假日同享。</p>
+                  <span class="deal-tag">限本周</span>
+                </article>
+                <article class="deal-card deal-card-jewelry">
+                  <p class="deal-brand">可领取</p>
+                  <h3>周末停车减免券</h3>
+                  <p class="deal-copy">周末到店可领取，单次最高抵扣 2 小时停车费。</p>
+                  <span class="deal-tag">立即领取</span>
+                </article>
+                <article class="deal-card deal-card-beauty">
+                  <p class="deal-brand">可领取</p>
+                  <h3>会员欢迎礼券</h3>
+                  <p class="deal-copy">新会员限领 1 次，可用于指定餐饮与零售门店。</p>
+                  <span class="deal-tag">限新会员</span>
+                </article>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <nav class="bottom-nav" aria-label="底部导航">
+        <a class="nav-item" href="./index.html">
+          <span class="nav-icon">⌂</span>
+          <span>首页</span>
+        </a>
+        <a class="nav-item" href="./stores.html">
+          <span class="nav-icon">⌘</span>
+          <span>发现</span>
+        </a>
+        <a class="nav-item is-active" href="./rewards.html">
+          <span class="nav-icon">◎</span>
+          <span>奖励</span>
+        </a>
+        <a class="nav-item" href="./profile.html">
+          <span class="nav-icon">◫</span>
+          <span>钱包</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+
+  <script>
+    const rewardsTabs = document.querySelectorAll(".rewards-tab");
+    const rewardsPanels = document.querySelectorAll(".rewards-panel");
+
+    function setRewardsTab(tabName) {
+      rewardsTabs.forEach((tab) => {
+        tab.classList.toggle("is-active", tab.dataset.rewardsTab === tabName);
+      });
+
+      rewardsPanels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.rewardsPanel === tabName);
+      });
+    }
+
+    rewardsTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setRewardsTab(tab.dataset.rewardsTab);
+      });
+    });
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

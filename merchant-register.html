@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#fffdf9">
+  <title>会员注册 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame merchant-register-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="merchant-register-content">
+        <div class="merchant-register-topbar">
+          <a class="coupon-detail-back" href="./index2.html" aria-label="返回商户首页">‹</a>
+          <div>
+            <p class="merchant-register-eyebrow">Merchant Console</p>
+            <h1>会员注册</h1>
+          </div>
+        </div>
+
+        <section class="merchant-register-intro">
+          <p>请填写会员信息并提交表单，完成现场开卡。</p>
+        </section>
+
+        <form class="merchant-register-form">
+          <label class="field-group">
+            <span>开卡商场</span>
+            <input class="text-input" type="text" value="YTL Mall Kuala Lumpur" placeholder="请输入开卡商场">
+          </label>
+
+          <label class="field-group">
+            <span>开卡人</span>
+            <input class="text-input" type="text" value="Tom" placeholder="请输入开卡人">
+          </label>
+
+          <label class="field-group">
+            <span>会员姓名</span>
+            <input class="text-input" type="text" placeholder="请输入会员姓名">
+          </label>
+
+          <fieldset class="field-group merchant-choice-group">
+            <legend>性别</legend>
+            <div class="merchant-choice-row">
+              <label class="merchant-choice-pill">
+                <input type="radio" name="gender" checked>
+                <span>保密</span>
+              </label>
+              <label class="merchant-choice-pill">
+                <input type="radio" name="gender">
+                <span>男</span>
+              </label>
+              <label class="merchant-choice-pill">
+                <input type="radio" name="gender">
+                <span>女</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-group">
+            <span>手机号</span>
+            <input class="text-input" type="tel" inputmode="numeric" placeholder="请输入手机号">
+          </label>
+
+          <label class="field-group">
+            <span>邮箱</span>
+            <input class="text-input" type="email" placeholder="请输入邮箱">
+          </label>
+
+          <fieldset class="field-group merchant-choice-group">
+            <legend>国籍</legend>
+            <div class="merchant-choice-row merchant-choice-row-two">
+              <label class="merchant-choice-pill">
+                <input type="radio" name="nationality" checked>
+                <span>马来西亚</span>
+              </label>
+              <label class="merchant-choice-pill">
+                <input type="radio" name="nationality">
+                <span>新加坡</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="field-group">
+            <span>身份证</span>
+            <input class="text-input" type="text" placeholder="请输入身份证号码">
+          </label>
+
+          <label class="field-group">
+            <span>地址</span>
+            <textarea class="merchant-textarea" placeholder="请输入详细地址"></textarea>
+          </label>
+
+          <button class="solid-button login-submit merchant-register-submit" type="button">提交注册</button>
+        </form>
+      </section>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

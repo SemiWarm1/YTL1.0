@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>搜索 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame search-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="search-content">
+        <div class="search-topbar">
+          <a class="login-back" href="./index.html">‹ 返回</a>
+        </div>
+
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input id="search-input" class="search-input" type="text" placeholder="搜索门店、品牌或促销">
+        </div>
+
+        <div class="search-tabs" role="tablist" aria-label="搜索结果分类">
+          <button class="search-tab is-active" type="button" data-search-tab="all">全部</button>
+          <button class="search-tab" type="button" data-search-tab="mall">商场</button>
+          <button class="search-tab" type="button" data-search-tab="stores">门店</button>
+          <button class="search-tab" type="button" data-search-tab="promotions">促销</button>
+        </div>
+
+        <div class="search-results">
+          <div class="search-panel is-active" data-search-panel="all">
+            <article class="search-result-card" data-keywords="商场 YTL Mall 中庭 活动 服务">
+              <p class="search-result-type">商场</p>
+              <h3>YTL Mall</h3>
+              <p class="search-result-address">吉隆坡，12 Jalan Bukit Bintang</p>
+              <p>营业时间 10:00 - 22:00 · 中央中庭活动与会员服务同步开放。</p>
+            </article>
+            <article class="search-result-card" data-keywords="清妍美肤 护肤 彩妆 门店">
+              <p class="search-result-type">门店</p>
+              <h3>清妍美肤</h3>
+              <p>1F 层 · 护肤彩妆 · 今日会员双倍积分</p>
+            </article>
+            <article class="search-result-card" data-keywords="云上小馆 餐饮 套餐 门店">
+              <p class="search-result-type">门店</p>
+              <h3>云上小馆</h3>
+              <p>5F 层 · 创意融合菜 · 午市套餐 78 元起</p>
+            </article>
+            <article class="search-result-card" data-keywords="夏季时装 促销 活动 女装">
+              <p class="search-result-type">促销</p>
+              <h3>夏季时装</h3>
+              <p>新季单品上新，精选服饰与配饰限时推广中。</p>
+            </article>
+          </div>
+
+          <div class="search-panel" data-search-panel="mall">
+            <article class="search-result-card" data-keywords="商场 YTL Mall 中庭 活动 服务">
+              <p class="search-result-type">商场</p>
+              <h3>YTL Mall</h3>
+              <p class="search-result-address">吉隆坡，12 Jalan Bukit Bintang</p>
+              <p>营业时间 10:00 - 22:00 · 中央中庭活动与会员服务同步开放。</p>
+            </article>
+            <article class="search-result-card" data-keywords="商场 停车 服务 会员">
+              <p class="search-result-type">商场</p>
+              <h3>YTL Mall II</h3>
+              <p>1F 层 · 提供会员咨询、礼品包装与停车协助服务。</p>
+            </article>
+          </div>
+
+          <div class="search-panel" data-search-panel="stores">
+            <article class="search-result-card" data-keywords="清妍美肤 护肤 彩妆 门店">
+              <p class="search-result-type">门店</p>
+              <h3>清妍美肤</h3>
+              <p>1F 层 · 护肤彩妆 · 今日会员双倍积分</p>
+            </article>
+            <article class="search-result-card" data-keywords="云上小馆 餐饮 套餐 门店">
+              <p class="search-result-type">门店</p>
+              <h3>云上小馆</h3>
+              <p>5F 层 · 创意融合菜 · 午市套餐 78 元起</p>
+            </article>
+            <article class="search-result-card" data-keywords="素作生活 家居 门店">
+              <p class="search-result-type">门店</p>
+              <h3>素作生活</h3>
+              <p>3F 层 · 家居美学 · 新品首发陈列中</p>
+            </article>
+          </div>
+
+          <div class="search-panel" data-search-panel="promotions">
+            <article class="search-result-card" data-keywords="夏季时装 促销 活动 女装">
+              <p class="search-result-type">促销</p>
+              <h3>夏季时装</h3>
+              <p>新季单品上新，精选服饰与配饰限时推广中。</p>
+            </article>
+            <article class="search-result-card" data-keywords="会员尝鲜价 促销 美肤">
+              <p class="search-result-type">促销</p>
+              <h3>会员尝鲜价</h3>
+              <p>人气精华套组低至 99 元，积分可叠加。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const searchTabs = document.querySelectorAll(".search-tab");
+    const searchPanels = document.querySelectorAll(".search-panel");
+    const searchInput = document.getElementById("search-input");
+
+    function setSearchTab(tabName) {
+      searchTabs.forEach((tab) => {
+        tab.classList.toggle("is-active", tab.dataset.searchTab === tabName);
+      });
+
+      searchPanels.forEach((panel) => {
+        panel.classList.toggle("is-active", panel.dataset.searchPanel === tabName);
+      });
+
+      filterSearchResults();
+    }
+
+    function filterSearchResults() {
+      const keyword = (searchInput.value || "").trim().toLowerCase();
+      const activePanel = document.querySelector(".search-panel.is-active");
+      if (!activePanel) return;
+
+      activePanel.querySelectorAll(".search-result-card").forEach((card) => {
+        const haystack = (card.dataset.keywords || "") + " " + card.textContent;
+        const matched = !keyword || haystack.toLowerCase().includes(keyword);
+        card.style.display = matched ? "" : "none";
+      });
+    }
+
+    searchTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        setSearchTab(tab.dataset.searchTab);
+      });
+    });
+
+    searchInput.addEventListener("input", filterSearchResults);
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>

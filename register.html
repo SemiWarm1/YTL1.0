@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>注册 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame login-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="login-content">
+        <a class="login-back" href="./index.html">‹ 返回</a>
+        <div class="login-brand-block">
+          <p class="brand-cn">YTL Mall</p>
+          <p class="brand-en">A one-stop shopping mall</p>
+        </div>
+
+        <form class="login-form">
+          <label class="field-group">
+            <span>手机号</span>
+            <input class="text-input" type="tel" inputmode="numeric" placeholder="请输入手机号">
+          </label>
+
+          <label class="field-group">
+            <span>密码</span>
+            <div class="password-field">
+              <input class="text-input password-input" id="register-password" type="password" placeholder="请输入密码">
+              <button class="password-toggle" type="button" aria-label="显示密码" onclick="togglePassword('register-password', this)">
+                <span class="eye-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </label>
+
+          <label class="field-group">
+            <span>再次输入密码</span>
+            <div class="password-field">
+              <input class="text-input password-input" id="register-confirm-password" type="password" placeholder="请再次输入密码">
+              <button class="password-toggle" type="button" aria-label="显示密码" onclick="togglePassword('register-confirm-password', this)">
+                <span class="eye-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </label>
+
+          <button class="solid-button login-submit" type="button">注册</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    function togglePassword(inputId, button) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      const isPassword = input.type === "password";
+      input.type = isPassword ? "text" : "password";
+      button.setAttribute("aria-label", isPassword ? "隐藏密码" : "显示密码");
+      button.classList.toggle("is-visible", isPassword);
+    }
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
