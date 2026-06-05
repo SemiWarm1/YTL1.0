@@ -49,11 +49,11 @@
               </div>
             </div>
 
-            <div class="member-card">
+            <div class="member-card" id="member-login-card">
               <p class="member-copy">登录解锁更多会员礼遇</p>
               <div class="member-actions">
-                <a class="ghost-button action-link" href="./login.html">立即登录</a>
-                <a class="solid-button action-link" href="./register.html">注册</a>
+                <a class="ghost-button action-link member-entry-link" href="./login.html">立即登录</a>
+                <a class="solid-button action-link member-entry-link" href="./register.html">注册</a>
               </div>
             </div>
 
@@ -164,6 +164,9 @@
     const promoOverlay = document.getElementById("promo-overlay");
     const promoClose = document.getElementById("promo-close");
     const promoStorageKey = "ytlPromoLastShownDate";
+    const memberLoginCard = document.getElementById("member-login-card");
+    const memberEntryLinks = document.querySelectorAll(".member-entry-link");
+    const memberCardHiddenStorageKey = "ytlMemberLoginCardHidden";
 
     function getTodayPromoDateKey() {
       const now = new Date();
@@ -221,6 +224,36 @@
         }
       });
     }
+
+    function readMemberLoginCardHidden() {
+      try {
+        return localStorage.getItem(memberCardHiddenStorageKey) === "true";
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function writeMemberLoginCardHidden() {
+      try {
+        localStorage.setItem(memberCardHiddenStorageKey, "true");
+      } catch (error) {
+        return;
+      }
+    }
+
+    function applyMemberLoginCardVisibility() {
+      if (!memberLoginCard) return;
+      memberLoginCard.hidden = readMemberLoginCardHidden();
+    }
+
+    memberEntryLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        writeMemberLoginCardHidden();
+        applyMemberLoginCardVisibility();
+      });
+    });
+
+    applyMemberLoginCardVisibility();
   </script>
   <script src="./script.js"></script>
 </body>

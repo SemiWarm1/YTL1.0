@@ -114,6 +114,12 @@ body {
   gap: 16px;
 }
 
+.drawer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .drawer-user {
   display: flex;
   align-items: center;
@@ -160,6 +166,23 @@ body {
   display: grid;
   place-items: center;
   text-decoration: none;
+}
+
+.drawer-login {
+  min-width: 64px;
+  height: 36px;
+  padding: 0 16px;
+  border: 1px solid rgba(231, 221, 208, 0.88);
+  border-radius: 12px;
+  background: #ffffff;
+  color: #9b7440;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 10px 20px rgba(188, 155, 110, 0.08);
 }
 
 .drawer-menu {
@@ -1979,6 +2002,20 @@ body {
 .login-submit {
   width: 100%;
   margin-top: 6px;
+}
+
+.login-secondary-action {
+  margin-top: -6px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-register-link {
+  color: #9b7440;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.4;
 }
 
 .login-guest-bar {
