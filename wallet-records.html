@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#f5f6fb">
-  <title>储值变动记录 - YTL Mall</title>
+  <meta name="theme-color" content="#ffffff">
+  <title>余额明细 - YTL Mall</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <main class="app-shell">
-    <section class="phone-frame wallet-records-page">
+    <section class="phone-frame activities-page">
       <header class="status-bar">
         <span>19:51</span>
         <div class="status-icons">
@@ -18,73 +18,123 @@
         </div>
       </header>
 
-      <section class="wallet-records-content">
+      <section class="activities-content">
         <div class="wallet-records-topbar">
           <a class="coupon-detail-back" href="./profile.html" aria-label="返回钱包">‹</a>
           <h1>余额明细</h1>
           <span class="coupon-detail-spacer" aria-hidden="true"></span>
         </div>
 
-        <section class="wallet-points-card">
-          <div>
-            <p>钱包金额</p>
-            <strong>1239.00</strong>
+        <section class="merchant-transaction-filter">
+          <div class="merchant-transaction-filter-fields">
+            <label class="field-group merchant-filter-group">
+              <span>开始时间</span>
+              <input class="text-input" type="text" value="2026-05-26" placeholder="请选择开始时间">
+            </label>
+            <label class="field-group merchant-filter-group">
+              <span>结束时间</span>
+              <input class="text-input" type="text" value="2026-06-04" placeholder="请选择结束时间">
+            </label>
           </div>
-          <div class="wallet-points-visual" aria-hidden="true">
-            <span class="wallet-points-coin wallet-points-coin-top"></span>
-            <span class="wallet-points-coin wallet-points-coin-mid"></span>
-            <span class="wallet-points-coin wallet-points-coin-bottom"></span>
-            <span class="wallet-points-rm">RM</span>
+
+          <div class="merchant-choice-row merchant-transaction-shortcuts">
+            <label class="merchant-choice-pill">
+              <input type="radio" name="wallet-quick-range" checked>
+              <span>今日</span>
+            </label>
+            <label class="merchant-choice-pill">
+              <input type="radio" name="wallet-quick-range">
+              <span>昨日</span>
+            </label>
+            <label class="merchant-choice-pill">
+              <input type="radio" name="wallet-quick-range">
+              <span>本周</span>
+            </label>
           </div>
         </section>
 
-        <div class="wallet-records-range">
-          <span class="wallet-records-calendar" aria-hidden="true"></span>
-          <span>日期筛选条件</span>
-        </div>
-
-        <section class="wallet-records-panel">
-          <h2>储值变动记录</h2>
-
-          <article class="wallet-record-item">
-            <div class="wallet-record-main">
-              <span class="wallet-record-icon wallet-record-icon-plus">□</span>
-              <div class="wallet-record-copy">
-                <h3>充值</h3>
-                <p>2021-07-15 12:35:49</p>
+        <section class="activities-panel merchant-transaction-list-page">
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-06-04 14:32:18</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">余额充值</strong>
+                <p class="merchant-transaction-order">钱包金额：RM 300.00</p>
               </div>
-            </div>
-            <div class="wallet-record-meta">
-              <strong class="wallet-record-value is-positive">+10</strong>
-              <p>剩余积分 1850</p>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">获取明细</span>
+                <strong class="merchant-transaction-points points-record-positive">+300.00</strong>
+              </div>
             </div>
           </article>
 
-          <article class="wallet-record-item">
-            <div class="wallet-record-main">
-              <span class="wallet-record-icon wallet-record-icon-plus">□</span>
-              <div class="wallet-record-copy">
-                <h3>充值</h3>
-                <p>2021-07-15 12:35:49</p>
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-06-03 20:05:46</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">门店消费</strong>
+                <p class="merchant-transaction-order">消费门店：YTL Mall 美妆馆</p>
               </div>
-            </div>
-            <div class="wallet-record-meta">
-              <strong class="wallet-record-value is-positive">+10</strong>
-              <p>剩余积分 1850</p>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">消费明细</span>
+                <strong class="merchant-transaction-points points-record-negative">-99.00</strong>
+              </div>
             </div>
           </article>
 
-          <article class="wallet-record-item">
-            <div class="wallet-record-main">
-              <span class="wallet-record-icon wallet-record-icon-minus">RM</span>
-              <div class="wallet-record-copy">
-                <h3>消费</h3>
-                <p>2021-07-15 12:35:49</p>
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-06-02 16:41:22</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">余额充值</strong>
+                <p class="merchant-transaction-order">钱包金额：RM 500.00</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">获取明细</span>
+                <strong class="merchant-transaction-points points-record-positive">+500.00</strong>
               </div>
             </div>
-            <div class="wallet-record-meta">
-              <strong class="wallet-record-value is-negative">−10</strong>
-              <p>剩余积分 1850</p>
+          </article>
+
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-06-01 12:18:09</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">门店消费</strong>
+                <p class="merchant-transaction-order">消费门店：YTL Mall 珠宝专区</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">消费明细</span>
+                <strong class="merchant-transaction-points points-record-negative">-268.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-05-30 10:26:37</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">退款入账</strong>
+                <p class="merchant-transaction-order">退款来源：YTL Mall 生活选物</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">获取明细</span>
+                <strong class="merchant-transaction-points points-record-positive">+32.50</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="activities-item merchant-transaction-item">
+            <p class="merchant-transaction-time">2026-05-28 09:54:11</p>
+            <div class="merchant-transaction-row">
+              <div class="merchant-transaction-main">
+                <strong class="merchant-transaction-title">门店消费</strong>
+                <p class="merchant-transaction-order">消费门店：YTL Mall 中央咖啡</p>
+              </div>
+              <div class="merchant-transaction-side">
+                <span class="merchant-transaction-status">消费明细</span>
+                <strong class="merchant-transaction-points points-record-negative">-46.80</strong>
+              </div>
             </div>
           </article>
         </section>

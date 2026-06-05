@@ -163,26 +163,31 @@
   <script>
     const promoOverlay = document.getElementById("promo-overlay");
     const promoClose = document.getElementById("promo-close");
-    const promoWindowNameKey = "ytlPromoLastShownAt";
+    const promoStorageKey = "ytlPromoLastShownDate";
 
-    function readPromoState() {
+    function getTodayPromoDateKey() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0");
+      const day = String(now.getDate()).padStart(2, "0");
+      return `${year}-${month}-${day}`;
+    }
+
+    function readPromoLastShownDate() {
       try {
-        return window.name ? JSON.parse(window.name) : {};
+        const value = localStorage.getItem(promoStorageKey) || "";
+        return typeof value === "string" ? value : "";
       } catch (error) {
-        return {};
+        return "";
       }
     }
 
-    function readPromoLastShownAt() {
-      const promoState = readPromoState();
-      const value = Number(promoState[promoWindowNameKey] || "0");
-      return Number.isFinite(value) ? value : 0;
-    }
-
-    function writePromoLastShownAt(timestamp) {
-      const promoState = readPromoState();
-      promoState[promoWindowNameKey] = timestamp;
-      window.name = JSON.stringify(promoState);
+    function writePromoLastShownDate(dateKey) {
+      try {
+        localStorage.setItem(promoStorageKey, dateKey);
+      } catch (error) {
+        return;
+      }
     }
 
     function closePromoOverlay() {
@@ -191,21 +196,21 @@
         promoOverlay.style.display = "none";
       }
 
-      writePromoLastShownAt(Date.now());
+      writePromoLastShownDate(getTodayPromoDateKey());
     }
 
     window.closePromoOverlay = closePromoOverlay;
 
     function shouldShowPromoOnLoad() {
-      const promoLastShownAt = readPromoLastShownAt();
-      const promoCooldownMs = 10 * 60 * 1000;
-      return !promoLastShownAt || Date.now() - promoLastShownAt >= promoCooldownMs;
+      const todayDateKey = getTodayPromoDateKey();
+      const promoLastShownDate = readPromoLastShownDate();
+      return promoLastShownDate !== todayDateKey;
     }
 
     if (promoOverlay && shouldShowPromoOnLoad()) {
       promoOverlay.hidden = false;
       promoOverlay.style.display = "flex";
-      writePromoLastShownAt(Date.now());
+      writePromoLastShownDate(getTodayPromoDateKey());
     }
 
     if (promoOverlay && promoClose) {

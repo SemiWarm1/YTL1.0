@@ -28,7 +28,13 @@
         <form class="login-form">
           <label class="field-group">
             <span>手机号</span>
-            <input class="text-input" type="tel" inputmode="numeric" placeholder="请输入手机号">
+            <div class="phone-input-row">
+              <select class="phone-code-select" aria-label="选择国家区号">
+                <option value="+60">+60</option>
+                <option value="+65">+65</option>
+              </select>
+              <input class="text-input" type="tel" inputmode="numeric" placeholder="请输入手机号">
+            </div>
           </label>
           <label class="field-group">
             <span>密码</span>
