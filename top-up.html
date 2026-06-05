@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <title>会员充值 - YTL Mall</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="phone-frame top-up-page">
+      <header class="status-bar">
+        <span>19:51</span>
+        <div class="status-icons">
+          <span>5G</span>
+          <span>75%</span>
+        </div>
+      </header>
+
+      <section class="top-up-content">
+        <div class="top-up-hero">
+          <div class="top-up-topbar">
+            <a class="login-back top-up-back" href="./profile.html">‹ 返回</a>
+            <h1 data-cn="会员充值" data-en="Top Up">会员充值</h1>
+            <span class="coupon-detail-spacer" aria-hidden="true"></span>
+          </div>
+
+          <div class="top-up-balance-block">
+            <p data-cn="当前余额" data-en="Current Balance">当前余额</p>
+            <strong>RM 140,371.39</strong>
+          </div>
+        </div>
+
+        <section class="top-up-panel">
+          <label class="field-group top-up-field">
+            <span data-cn="充值金额" data-en="Amount">充值金额</span>
+            <input class="text-input top-up-input" type="text" value="RM 0.00" aria-label="充值金额">
+            <small class="top-up-hint" data-cn="最低充值金额为 RM 0.10" data-en="Minimum top-up amount is RM 0.10">最低充值金额为 RM 0.10</small>
+          </label>
+
+          <section class="top-up-section">
+            <div class="section-heading section-heading-left top-up-section-heading">
+              <div>
+                <h2 data-cn="快捷选择" data-en="Quick Select">快捷选择</h2>
+              </div>
+            </div>
+
+            <div class="top-up-quick-grid">
+              <button class="top-up-quick-card" type="button">RM 10</button>
+              <button class="top-up-quick-card" type="button">RM 20</button>
+              <button class="top-up-quick-card" type="button">RM 50</button>
+              <button class="top-up-quick-card" type="button">RM 100</button>
+              <button class="top-up-quick-card" type="button">RM 200</button>
+              <button class="top-up-quick-card" type="button">RM 500</button>
+            </div>
+          </section>
+
+          <section class="top-up-info-card">
+            <div class="top-up-info-head">
+              <span class="top-up-info-icon" aria-hidden="true">i</span>
+              <strong data-cn="重要信息" data-en="Important Information">重要信息</strong>
+            </div>
+            <ul class="top-up-info-list">
+              <li data-cn="充值实时到账，通常可立即使用" data-en="Top-up is instant and usually available immediately">充值实时到账，通常可立即使用</li>
+              <li data-cn="不同支付方式可能产生手续费" data-en="Service fees may apply depending on payment method">不同支付方式可能产生手续费</li>
+              <li data-cn="充值金额到账后暂不支持退款" data-en="Credits are non-refundable after top-up is completed">充值金额到账后暂不支持退款</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+
+      <div class="exchange-action-bar top-up-action-bar">
+        <button class="exchange-primary-button top-up-submit-button" type="button" data-cn="继续" data-en="Continue">继续</button>
+      </div>
+    </section>
+  </main>
+  <script src="./script.js"></script>
+</body>
+</html>

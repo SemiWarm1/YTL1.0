@@ -94,6 +94,7 @@
 
     if (markReadButton) {
       markReadButton.addEventListener("click", () => {
+        const currentLang = localStorage.getItem("ytlLanguage") || "zh";
         unreadCards.forEach((card) => {
           card.classList.remove("is-unread");
           const dot = card.querySelector("[data-message-dot]");
@@ -104,12 +105,12 @@
           }
 
           if (state) {
-            state.textContent = "已读";
+            state.textContent = currentLang === "en" ? "Read" : "已读";
             state.classList.remove("unread");
           }
         });
 
-        markReadButton.textContent = "已全部读";
+        markReadButton.textContent = currentLang === "en" ? "All Read" : "已全部读";
         markReadButton.disabled = true;
       });
     }

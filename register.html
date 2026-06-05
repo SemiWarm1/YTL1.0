@@ -62,8 +62,11 @@
       const input = document.getElementById(inputId);
       if (!input) return;
       const isPassword = input.type === "password";
+      const currentLang = localStorage.getItem("ytlLanguage") || "zh";
       input.type = isPassword ? "text" : "password";
-      button.setAttribute("aria-label", isPassword ? "隐藏密码" : "显示密码");
+      button.setAttribute("aria-label", isPassword
+        ? (currentLang === "en" ? "Hide password" : "隐藏密码")
+        : (currentLang === "en" ? "Show password" : "显示密码"));
       button.classList.toggle("is-visible", isPassword);
     }
   </script>
