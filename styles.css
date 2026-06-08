@@ -3590,12 +3590,12 @@ body {
 
 .garrett-wordmark {
   color: #1e4f8c;
-  font-family: "Brush Script MT", "Segoe Script", cursive;
-  font-size: 54px;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 27px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
-  transform: rotate(-6deg);
+  transform: none;
 }
 
 .garrett-subtitle {
